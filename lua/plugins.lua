@@ -9,5 +9,12 @@ return require('packer').startup(function(use)
 			'nvim-tree/nvim-web-devicons', -- optioinal, for file icons
 		},
 	}
+
+	-- fzf
+	use {
+		'junegunn/fzf',
+		run = function() vim.fn['fzf#install']() end
+	}
+	use 'junegunn/fzf.vim'
 end)
 
