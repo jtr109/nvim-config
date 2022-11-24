@@ -1,4 +1,3 @@
-vim.o.number = true
-vim.o.relativenumber = true
-
+require('global')
 require('plugins')
+require('plugins/init')
