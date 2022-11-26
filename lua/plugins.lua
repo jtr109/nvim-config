@@ -25,5 +25,23 @@ return require('packer').startup(function(use)
 
 	-- comment
 	use 'tpope/vim-commentary'
+
+	-- -- nice interface for LSP functions (among other things)
+	-- use {
+	-- 	'nvim-telescope/telescope.nvim',
+	-- 	requires = { { 'nvim-lua/plenary.nvim' } }
+	-- }
+
+
+	-- cmp
+	use 'hrsh7th/nvim-cmp' -- The completion plugin
+	use 'hrsh7th/cmp-nvim-lsp'
+
+	-- LSP
+	use {
+		'williamboman/mason.nvim',
+		'williamboman/mason-lspconfig.nvim',
+		'neovim/nvim-lspconfig',
+	}
 end)
 
