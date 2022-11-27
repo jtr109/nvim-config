@@ -34,10 +34,6 @@ require('leap').add_default_mappings()
 --   cmd = { "C:\\Users\\liryan\\omnisharp-win-x64-net6.0\\OmniSharp.exe", "--languageserver" , "--hostPID", tostring(pid) },
 -- }
 
--- START mason
-require("mason").setup()
--- END mason
-
 -- LSP
 require("mason").setup()
 require("mason-lspconfig").setup()

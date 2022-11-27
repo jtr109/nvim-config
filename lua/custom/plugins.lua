@@ -26,11 +26,11 @@ return packer.startup(function(use)
 	}
 
 	-- fzf
-	use {
-		'junegunn/fzf',
-		run = function() vim.fn['fzf#install']() end
-	}
-	use 'junegunn/fzf.vim'
+	-- use {
+	-- 	'junegunn/fzf',
+	-- 	run = function() vim.fn['fzf#install']() end
+	-- }
+	-- use 'junegunn/fzf.vim'
 
 	-- leap.nvim
 	use 'ggandor/leap.nvim'
@@ -50,7 +50,15 @@ return packer.startup(function(use)
 
 	-- cmp
 	use 'hrsh7th/nvim-cmp' -- The completion plugin
-	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer' -- buffer completions
+	use 'hrsh7th/cmp-path' -- path completions
+	use 'hrsh7th/cmp-cmdline' -- cmdline completions
+	use "saadparwaiz1/cmp_luasnip" -- snippet completions
+	use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in language server client
+
+	-- snippets
+	use "L3MON4D3/LuaSnip" --snippet engine
+	use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
 	-- LSP
 	use {
@@ -58,5 +66,8 @@ return packer.startup(function(use)
 		'williamboman/mason-lspconfig.nvim',
 		'neovim/nvim-lspconfig',
 	}
+
+	-- Colorschemes
+	use "folke/tokyonight.nvim"
 end)
 
