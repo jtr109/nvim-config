@@ -133,3 +133,14 @@ cmp.setup {
     native_menu = false,
   },
 }
+
+-- Autopairs --
+local autopairs_status_ok, cmp_autopairs = pcall(require, 'nvim-autopairs.completion.cmp')
+if not autopairs_status_ok then
+  return
+end
+-- If you want insert `(` after select function or method item
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)

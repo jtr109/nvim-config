@@ -27,8 +27,11 @@ end
 local packer_bootstrap = ensure_packer()
 
 return packer.startup(function(use)
-	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+	use 'wbthomason/packer.nvim' -- Packer can manage itself
+	use 'ggandor/leap.nvim' -- alternative of easy motion
+	use 'tpope/vim-repeat' -- repeat.vim
+	use 'tpope/vim-commentary' -- comment
+	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- syntax highlight
 
 	-- File explorer
 	use {
@@ -37,15 +40,6 @@ return packer.startup(function(use)
 			'nvim-tree/nvim-web-devicons', -- optioinal, for file icons
 		},
 	}
-
-	-- leap.nvim
-	use 'ggandor/leap.nvim'
-
-	-- repeat.vim
-	use 'tpope/vim-repeat'
-
-	-- comment
-	use 'tpope/vim-commentary'
 
 	-- cmp
 	use 'hrsh7th/nvim-cmp' -- The completion plugin
@@ -68,17 +62,16 @@ return packer.startup(function(use)
 	use "folke/tokyonight.nvim"
 
 	-- fuzzy finder
-	-- use {
-	-- 	'junegunn/fzf',
-	-- 	run = function() vim.fn['fzf#install']() end
-	-- }
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 
-	-- syntax highlight
-	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+	-- auto complete brackets
+	use {
+		"windwp/nvim-autopairs",
+		config = function () require("nvim-autopairs").setup {} end
+	}
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

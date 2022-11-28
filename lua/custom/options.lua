@@ -8,7 +8,7 @@
 local options = {
 	clipboard = 'unnamedplus', -- enable system clipboard
 	cursorline = true, -- highlight cursor line
-	mouse = 'a', -- enable mouse
+	-- mouse = 'a', -- enable mouse
 	number = true, -- show line number
 	relativenumber = true, -- relative line number
 	smartcase = true, -- smart case on search
