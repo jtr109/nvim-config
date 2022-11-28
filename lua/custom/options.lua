@@ -1,8 +1,8 @@
 -- disable netrw at the very start of your init.lua (strongly advised)
 -- dependences:
 --   - nvim-tree.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 
 -- :help options
 local options = {
@@ -16,4 +16,13 @@ local options = {
 }
 for k, v in pairs(options) do
 	vim.opt[k] = v
+end
+
+local global_options = {
+	-- :help netrw-browse-options
+	netrw_browse_split = 4, -- change how files are opened
+	netrw_winsize = 25, -- set the width of the directory explorer
+}
+for k, v in pairs(global_options) do
+	vim.g[k] = v
 end

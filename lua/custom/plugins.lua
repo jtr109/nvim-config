@@ -61,11 +61,9 @@ return packer.startup(function(use)
 	use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
 	-- LSP
-	use {
-		'williamboman/mason.nvim',
-		'williamboman/mason-lspconfig.nvim',
-		'neovim/nvim-lspconfig',
-	}
+	use 'williamboman/mason.nvim'
+	use 'williamboman/mason-lspconfig.nvim'
+	use 'neovim/nvim-lspconfig'
 
 	-- Colorschemes
 	use "folke/tokyonight.nvim"

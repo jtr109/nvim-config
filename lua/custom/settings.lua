@@ -1,5 +1,5 @@
 -- START nvim-tree.lua
-require('nvim-tree').setup()
+-- require('nvim-tree').setup()
 -- END nvim-tree.lua
 
 -- START leap.nvim
@@ -33,7 +33,3 @@ require('leap').add_default_mappings()
 --   end,
 --   cmd = { "C:\\Users\\liryan\\omnisharp-win-x64-net6.0\\OmniSharp.exe", "--languageserver" , "--hostPID", tostring(pid) },
 -- }
-
--- LSP
-require("mason").setup()
-require("mason-lspconfig").setup()
