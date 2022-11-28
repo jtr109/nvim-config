@@ -33,6 +33,8 @@ return packer.startup(function(use)
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- syntax highlight
 	use "lewis6991/gitsigns.nvim" -- Git status line in side
 	use "windwp/nvim-autopairs" -- auto complete brackets
+	use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'} -- manage buffers as tab style
+	use "moll/vim-bbye" -- prevent exit vim even closing last buffer
 
 	-- Comment
 	use 'tpope/vim-commentary' -- comment

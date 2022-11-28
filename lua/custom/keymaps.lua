@@ -19,9 +19,12 @@ vim.g.mapleader = ","
 -- Normal --
 
 -- buffer navigation
-keymap("n", "<Leader>bb", ":b#<CR>", opts)
-keymap("n", "<Leader>bn", ":bnext<CR>", opts)
-keymap("n", "<Leader>bp", ":bprevious<CR>", opts)
+keymap("n", "<Leader>b", ":b#<CR>", opts)
+keymap("n", "<A-[>", ":bprevious<CR>", opts)
+keymap("n", "<A-]>", ":bnext<CR>", opts)
+-- keymap("n", "<Leader>bb", ":b#<CR>", opts)
+-- keymap("n", "<Leader>bn", ":bnext<CR>", opts)
+-- keymap("n", "<Leader>bp", ":bprevious<CR>", opts)
 
 -- resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)

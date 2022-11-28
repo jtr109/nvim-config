@@ -8,10 +8,11 @@
 local options = {
 	clipboard = 'unnamedplus', -- enable system clipboard
 	cursorline = true, -- highlight cursor line
-	-- mouse = 'a', -- enable mouse
+	ignorecase = true, -- Ingore case on search. It works with smartcase for search.
+	mouse = 'a', -- enable mouse
 	number = true, -- show line number
 	relativenumber = true, -- relative line number
-	smartcase = true, -- smart case on search
+	smartcase = true, -- Smart case on search
 	termguicolors = true, -- set termguicolors to enable highlight groups
 }
 for k, v in pairs(options) do
