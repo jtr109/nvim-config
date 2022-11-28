@@ -92,6 +92,9 @@ vim.keymap.set({ "n", "x", "o" }, "<Leader>gs", "<Plug>(leap-cross-window)", opt
 -- map("n", "<leader>dD", ":Telescope lsp_workspace_diagnostics<CR>")
 -- map("n", "<leader>xx", ":Telescope lsp_code_actions<CR>")
 -- map("n", "<leader>xd", ":%Telescope lsp_range_code_actions<CR>")
+
+-- LSP
+-- copy from: https://github.com/LunarVim/Neovim-from-scratch/blob/master/lua/user/lsp/handlers.lua
 keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
