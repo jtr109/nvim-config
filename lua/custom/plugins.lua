@@ -30,8 +30,14 @@ return packer.startup(function(use)
 	use 'wbthomason/packer.nvim' -- Packer can manage itself
 	use 'ggandor/leap.nvim' -- alternative of easy motion
 	use 'tpope/vim-repeat' -- repeat.vim
-	use 'tpope/vim-commentary' -- comment
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- syntax highlight
+	use "lewis6991/gitsigns.nvim" -- Git status line in side
+	use "windwp/nvim-autopairs" -- auto complete brackets
+
+	-- Comment
+	use 'tpope/vim-commentary' -- comment
+	-- use 'numToStr/Comment.nvim' -- Alternative of 'tpope/vim-commentary'
+	use 'JoosepAlviste/nvim-ts-context-commentstring' -- Support comment string in context. Usually required in JSX.
 
 	-- File explorer
 	use {
@@ -65,12 +71,6 @@ return packer.startup(function(use)
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = { { 'nvim-lua/plenary.nvim' } }
-	}
-
-	-- auto complete brackets
-	use {
-		"windwp/nvim-autopairs",
-		config = function () require("nvim-autopairs").setup {} end
 	}
 
 	-- Automatically set up your configuration after cloning packer.nvim

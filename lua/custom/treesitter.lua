@@ -5,5 +5,8 @@ end
 treesitter.setup{
 	ensure_installed = {
 		"lua",
-	}
+	},
+	context_commentstring = {
+		enable = true,
+	},
 }
