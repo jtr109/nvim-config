@@ -64,17 +64,17 @@ keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Plugins --
 
--- for nvim-tree.lua
-keymap("n", "<Leader>e", ":NvimTreeToggle<CR>", opts)
+-- nvim-tree.lua
+keymap("n", "<Leader>te", ":NvimTreeToggle<CR>", opts) -- toggle explorer
 
--- for leap.vim
+-- leap.vim
 vim.keymap.set({ "n", "x", "o" }, "<Leader>s", "<Plug>(leap-forward-to)", opts)
 vim.keymap.set({ "n", "x", "o" }, "<Leader>x", "<Plug>(leap-forward-till)", opts)
 vim.keymap.set({ "n", "x", "o" }, "<Leader>S", "<Plug>(leap-backward-to)", opts)
 vim.keymap.set({ "n", "x", "o" }, "<Leader>X", "<Plug>(leap-backward-till)", opts)
 vim.keymap.set({ "n", "x", "o" }, "<Leader>gs", "<Plug>(leap-cross-window)", opts)
 
--- for lsp
+-- lsp
 -- map("n", "<leader>fu", ":Telescope lsp_references<CR>")
 -- map("n", "<leader>gd", ":Telescope lsp_definitions<CR>")
 -- map("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
