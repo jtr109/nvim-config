@@ -13,6 +13,19 @@ packer.init {
 	},
 }
 
+local ensure_packer = function()
+	local fn = vim.fn
+	local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+	if fn.empty(fn.glob(install_path)) > 0 then
+		fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+		vim.cmd [[packadd packer.nvim]]
+		return true
+	end
+	return false
+end
+
+local packer_bootstrap = ensure_packer()
+
 return packer.startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
@@ -25,13 +38,6 @@ return packer.startup(function(use)
 		},
 	}
 
-	-- fzf
-	-- use {
-	-- 	'junegunn/fzf',
-	-- 	run = function() vim.fn['fzf#install']() end
-	-- }
-	-- use 'junegunn/fzf.vim'
-
 	-- leap.nvim
 	use 'ggandor/leap.nvim'
 
@@ -40,13 +46,6 @@ return packer.startup(function(use)
 
 	-- comment
 	use 'tpope/vim-commentary'
-
-	-- -- nice interface for LSP functions (among other things)
-	-- use {
-	-- 	'nvim-telescope/telescope.nvim',
-	-- 	requires = { { 'nvim-lua/plenary.nvim' } }
-	-- }
-
 
 	-- cmp
 	use 'hrsh7th/nvim-cmp' -- The completion plugin
@@ -67,5 +66,23 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use "folke/tokyonight.nvim"
-end)
 
+	-- fuzzy finder
+	-- use {
+	-- 	'junegunn/fzf',
+	-- 	run = function() vim.fn['fzf#install']() end
+	-- }
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = { { 'nvim-lua/plenary.nvim' } }
+	}
+
+	-- syntax highlight
+	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+	-- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
+	if packer_bootstrap then
+		require('packer').sync()
+	end
+end)
