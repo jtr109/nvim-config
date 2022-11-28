@@ -62,18 +62,7 @@ keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Plugins --
 
 -- for nvim-tree.lua
-keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
-
--- for fzf.vim
--- vim.api.nvim_create_user_command(
--- 	'Rg2',
--- 	"call fzf#vim#grep('rg --column --line-number --no-heading --color=always --smart-case '.<q-args>, 1, fzf#vim#with_preview(), <bang>0)"
--- 	,
--- 	{ bang = true, nargs = '*' }
--- )
--- keymap("n", "<Leader>ff", ":Files<CR>", opts)
--- keymap("n", "<Leader>fa", ":Rg<CR>", opts)
--- keymap("n", "<Leader>fi", ":Rg2 ", opts)
+keymap("n", "<Leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- for leap.vim
 vim.keymap.set({ "n", "x", "o" }, "<Leader>s", "<Plug>(leap-forward-to)", opts)
