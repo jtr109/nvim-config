@@ -14,3 +14,4 @@ require("custom.bufferline")
 require("custom.toggleterm")
 require("custom.lualine")
 require("custom.settings")
+
