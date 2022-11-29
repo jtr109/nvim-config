@@ -36,6 +36,7 @@ return packer.startup(function(use)
 	use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'} -- manage buffers as tab style
 	use "moll/vim-bbye" -- prevent exit vim even closing last buffer
 	use "akinsho/toggleterm.nvim" -- open terminal
+	use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } -- status line
 
 	-- Comment
 	use 'tpope/vim-commentary' -- comment
