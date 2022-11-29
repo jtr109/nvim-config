@@ -14,7 +14,8 @@ local options = {
 	relativenumber = true, -- relative line number
 	smartcase = true, -- Smart case on search
 	termguicolors = true, -- set termguicolors to enable highlight groups
-	-- shell = "powershell", -- set Powershell as terminal shell
+	list = true, -- visible blanks
+	listchars = 'tab:\\u21E5\\u0020,space:\\u00B7',
 }
 for k, v in pairs(options) do
 	vim.opt[k] = v
