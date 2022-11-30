@@ -16,6 +16,8 @@ local options = {
 	termguicolors = true, -- set termguicolors to enable highlight groups
 	list = true, -- visible blanks
 	listchars = 'tab:\\u21E5\\u0020,space:\\u00B7',
+	spell = true, -- enable builtin spell checker
+	spelllang = "en_us", -- set spell checking language
 }
 for k, v in pairs(options) do
 	vim.opt[k] = v
@@ -28,4 +30,11 @@ local global_options = {
 }
 for k, v in pairs(global_options) do
 	vim.g[k] = v
+end
+
+local local_options = {
+
+}
+for k, v in pairs(local_options) do
+	vim.opt_local[k] = v
 end

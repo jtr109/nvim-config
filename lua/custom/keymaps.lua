@@ -110,3 +110,15 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+-- ToggleTerm
+-- function _G.set_terminal_keymaps()
+-- 	local tt_opts = { noremap = true }
+-- 	vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], tt_opts)
+-- 	vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], tt_opts)
+-- 	vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], tt_opts)
+-- 	vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], tt_opts)
+-- 	vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], tt_opts)
+-- 	vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], tt_opts)
+-- end
+-- vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
