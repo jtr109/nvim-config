@@ -5,8 +5,15 @@ end
 treesitter.setup{
 	ensure_installed = {
 		"lua",
+		"c_sharp",
 	},
 	context_commentstring = {
+		enable = true,
+	},
+	highlight = {
+		enable = true,
+	},
+	indent = {
 		enable = true,
 	},
 }
