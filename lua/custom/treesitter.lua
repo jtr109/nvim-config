@@ -6,6 +6,7 @@ treesitter.setup{
 	ensure_installed = {
 		"lua",
 		"c_sharp",
+		"vim",
 	},
 	context_commentstring = {
 		enable = true,
