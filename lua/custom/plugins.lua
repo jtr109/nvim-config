@@ -41,7 +41,7 @@ return packer.startup(function(use)
 	-- Comment
 	use 'tpope/vim-commentary' -- comment
 	-- use 'numToStr/Comment.nvim' -- Alternative of 'tpope/vim-commentary'
-	-- use 'JoosepAlviste/nvim-ts-context-commentstring' -- Support comment string in context. Usually required in JSX.
+	use 'JoosepAlviste/nvim-ts-context-commentstring' -- Support comment string in context. Usually required in JSX.
 
 	-- File explorer
 	use {
