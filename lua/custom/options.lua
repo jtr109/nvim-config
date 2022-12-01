@@ -32,9 +32,3 @@ for k, v in pairs(global_options) do
 	vim.g[k] = v
 end
 
-local local_options = {
-
-}
-for k, v in pairs(local_options) do
-	vim.opt_local[k] = v
-end
