@@ -37,6 +37,7 @@ return packer.startup(function(use)
 	use "moll/vim-bbye" -- prevent exit vim even closing last buffer
 	use "akinsho/toggleterm.nvim" -- open terminal
 	use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } -- status line
+	use "romainl/vim-cool" -- auto nohl after searching
 
 	-- Comment
 	use 'tpope/vim-commentary' -- comment
