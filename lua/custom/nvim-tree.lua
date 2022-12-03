@@ -2,15 +2,7 @@ local status_ok, tree = pcall(require, "nvim-tree")
 if not status_ok then
     return
 end
-tree.setup({
-    view = {
-        mappings = {
-            list = {
-                { key = "", action = "" }
-            }
-        }
-    }
-})
+tree.setup()
 
 -- Auto close nvim when nvim-tree is the last window.
 -- Copy from: https://github.com/nvim-tree/nvim-tree.lua/wiki/Auto-Close
