@@ -1,7 +1,7 @@
--- https://github.com/nvim-lualine/lualine.nvim
+-- https://github.com/folke/which-key.nvim
 
-local status_ok, lualine = pcall(require, "lualine")
+local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
 	return
 end
-lualine.setup()
+which_key.setup()

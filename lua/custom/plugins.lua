@@ -60,6 +60,7 @@ return packer.startup(function(use)
 	use "saadparwaiz1/cmp_luasnip" -- snippet completions
 	use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in language server client
 	use 'hrsh7th/cmp-nvim-lua' -- Autocomplete NeoVim Lua API
+    use 'folke/which-key.nvim' -- a popup with possible keybindings
 
 	-- snippets
 	use "L3MON4D3/LuaSnip" --snippet engine

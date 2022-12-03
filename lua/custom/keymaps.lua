@@ -95,7 +95,7 @@ keymap("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 -- keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts) -- deprecated
-keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format { async = true }<cr>", opts)
+vim.keymap.set("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format { async = true }<cr>", opts)
 keymap("n", "<leader>li", "<cmd>LspInfo<cr>", opts)
 keymap("n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
 keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
@@ -108,10 +108,11 @@ keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 -- Telescope
 -- copy from: https://github.com/nvim-telescope/telescope.nvim#usage
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>ft', builtin.lsp_dynamic_workspace_symbols, {}) -- Or use `lsp_workspace_symbols`. I don't know the difference.
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Find files" })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Global search" })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Find buffers" })
+vim.keymap.set('n', '<leader>ft', builtin.lsp_dynamic_workspace_symbols, { desc = "LSP dynamic workspace symbols" })
+-- Or use `lsp_workspace_symbols` to replace `lsp_dynamic_workspace_symbols`. I don't know the difference.
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 -- ToggleTerm
