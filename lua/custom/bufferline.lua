@@ -5,8 +5,8 @@ end
 bufferline.setup {
     options = {
         offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
-        numbers = function(opts)
-            return opts.raise(opts.id)
+        numbers = function(opts) -- :help bufferline-numbers
+            return string.format('%s·%s', opts.raise(opts.id), opts.lower(opts.ordinal))
         end,
     }
 }
