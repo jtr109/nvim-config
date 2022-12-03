@@ -1,11 +1,7 @@
 local opts = { noremap = true, silent = true }
 
--- shorten function name
-local keymap = vim.api.nvim_set_keymap
-
 -- map leader
 vim.g.mapleader = ","
-
 
 -- Modes:
 --   noremal mode: "n",
@@ -19,54 +15,54 @@ vim.g.mapleader = ","
 -- Normal --
 
 -- buffer navigation
-keymap("n", "<Leader>b", ":b#<CR>", opts)
-keymap("n", "<Leader>gb", ":BufferLinePick<CR>", opts)
-keymap("n", "<A-[>", ":bprevious<CR>", opts)
-keymap("n", "<A-]>", ":bnext<CR>", opts)
--- keymap("n", "<Leader>bb", ":b#<CR>", opts)
--- keymap("n", "<Leader>bn", ":bnext<CR>", opts)
--- keymap("n", "<Leader>bp", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<Leader>b", ":b#<CR>", opts)
+vim.keymap.set("n", "<Leader>bp", ":BufferLinePick<CR>", opts)
+vim.keymap.set("n", "<A-[>", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<A-]>", ":bnext<CR>", opts)
+-- vim.keymap.set("n", "<Leader>bb", ":b#<CR>", opts)
+-- vim.keymap.set("n", "<Leader>bn", ":bnext<CR>", opts)
+-- vim.keymap.set("n", "<Leader>bp", ":bprevious<CR>", opts)
 
 -- resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
+vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", opts)
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- move text up and down
-keymap("n", "<A-j>", ":m .+1<CR>", opts)
-keymap("n", "<A-k>", ":m .-2<CR>", opts)
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>", opts)
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>", opts)
 
 
 -- Visual --
 
 -- stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+vim.keymap.set("v", "<", "<gv", opts)
+vim.keymap.set("v", ">", ">gv", opts)
 
 -- move text up and down
-keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- By default, the replaced text stored in clipboard.
 -- Override by settling the yanked text
--- keymap("v", "p", '"_dP', opts)
+-- vim.keymap.set("v", "p", '"_dP', opts)
 
 
 -- Insert --
 
 -- map Esc
-keymap("i", "<C-k>", "<Esc>", opts)
+vim.keymap.set("i", "<C-k>", "<Esc>", opts)
 
 -- move text up and down
-keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 
 -- Plugins --
 
 -- nvim-tree.lua
-keymap("n", "<Leader>te", ":NvimTreeToggle<CR>", opts) -- toggle explorer
+vim.keymap.set("n", "<Leader>te", ":NvimTreeToggle<CR>", opts) -- toggle explorer
 
 -- leap.vim
 vim.keymap.set({ "n", "x", "o" }, "<Leader>s", "<Plug>(leap-forward-to)", opts)
@@ -88,22 +84,22 @@ vim.keymap.set({ "n", "x", "o" }, "<Leader>gs", "<Plug>(leap-cross-window)", opt
 
 -- LSP
 -- copy from: https://github.com/LunarVim/Neovim-from-scratch/blob/master/lua/user/lsp/handlers.lua
-keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-keymap("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
--- keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts) -- deprecated
+vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+vim.keymap.set("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+-- vim.keymap.set("n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts) -- deprecated
 vim.keymap.set("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format { async = true }<cr>", opts)
-keymap("n", "<leader>li", "<cmd>LspInfo<cr>", opts)
-keymap("n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
-keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-keymap("n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
-keymap("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
-keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", opts)
+vim.keymap.set("n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
+vim.keymap.set("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+vim.keymap.set("n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
+vim.keymap.set("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
+vim.keymap.set("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+vim.keymap.set("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+vim.keymap.set("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 -- Telescope
 -- copy from: https://github.com/nvim-telescope/telescope.nvim#usage
@@ -118,11 +114,11 @@ vim.keymap.set('n', '<leader>ft', builtin.lsp_dynamic_workspace_symbols, { desc 
 -- ToggleTerm
 -- function _G.set_terminal_keymaps()
 -- 	local tt_opts = { noremap = true }
--- 	vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], tt_opts)
--- 	vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], tt_opts)
--- 	vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], tt_opts)
--- 	vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], tt_opts)
--- 	vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], tt_opts)
--- 	vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], tt_opts)
+-- 	vim.api.nvim_buf_set_vim.keymap.set(0, 't', '<esc>', [[<C-\><C-n>]], tt_opts)
+-- 	vim.api.nvim_buf_set_vim.keymap.set(0, 't', 'jk', [[<C-\><C-n>]], tt_opts)
+-- 	vim.api.nvim_buf_set_vim.keymap.set(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], tt_opts)
+-- 	vim.api.nvim_buf_set_vim.keymap.set(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], tt_opts)
+-- 	vim.api.nvim_buf_set_vim.keymap.set(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], tt_opts)
+-- 	vim.api.nvim_buf_set_vim.keymap.set(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], tt_opts)
 -- end
 -- vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
