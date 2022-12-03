@@ -20,6 +20,7 @@ vim.g.mapleader = ","
 
 -- buffer navigation
 keymap("n", "<Leader>b", ":b#<CR>", opts)
+keymap("n", "<Leader>gb", ":BufferLinePick<CR>", opts)
 keymap("n", "<A-[>", ":bprevious<CR>", opts)
 keymap("n", "<A-]>", ":bnext<CR>", opts)
 -- keymap("n", "<Leader>bb", ":b#<CR>", opts)
