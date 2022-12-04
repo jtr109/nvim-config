@@ -15,7 +15,7 @@ vim.g.mapleader = ","
 -- Normal --
 
 -- buffer navigation
-vim.keymap.set("n", "<Leader>b", ":b#<CR>", opts)
+vim.keymap.set("n", "<Leader>bb", ":b#<CR>", opts)
 vim.keymap.set("n", "<Leader>bp", ":BufferLinePick<CR>", opts)
 vim.keymap.set("n", "<A-[>", ":bprevious<CR>", opts)
 vim.keymap.set("n", "<A-]>", ":bnext<CR>", opts)
@@ -103,12 +103,17 @@ vim.keymap.set("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", op
 
 -- Telescope
 -- copy from: https://github.com/nvim-telescope/telescope.nvim#usage
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Find files" })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Global search" })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Find buffers" })
-vim.keymap.set('n', '<leader>ft', builtin.lsp_dynamic_workspace_symbols, { desc = "LSP dynamic workspace symbols" })
+local telescope_builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, { desc = "Find files" })
+vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, { desc = "Global search" })
+vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, { desc = "Find buffers" })
+vim.keymap.set('n', '<leader>ft', telescope_builtin.lsp_dynamic_workspace_symbols, { desc = "LSP dynamic workspace symbols" })
 -- Or use `lsp_workspace_symbols` to replace `lsp_dynamic_workspace_symbols`. I don't know the difference.
+vim.keymap.set('n', '<leader>fc', function()
+  telescope_builtin.command_history(
+    { sorter = require('telescope.sorters').get_substr_matcher() } -- keep the sort: https://github.com/nvim-telescope/telescope.nvim/issues/1118
+  )
+end, { desc = "Search command history" })
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 -- ToggleTerm
