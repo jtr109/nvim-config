@@ -1,6 +1,7 @@
 local servers = {
 	"sumneko_lua",
 	"omnisharp",
+  "lemminx",
 }
 
 local status_mason_ok, mason_installer = pcall(require, "mason")
