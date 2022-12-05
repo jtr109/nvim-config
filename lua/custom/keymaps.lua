@@ -15,13 +15,13 @@ vim.g.mapleader = ","
 -- Normal --
 
 -- buffer navigation
-vim.keymap.set("n", "<Leader>bb", ":b#<CR>", opts)
-vim.keymap.set("n", "<Leader>bp", ":BufferLinePick<CR>", opts)
+-- vim.keymap.set("n", "<Leader>b", ":b#<CR>", opts)
+vim.keymap.set("n", "<Leader>bj", ":BufferLinePick<CR>", opts) -- bi: buffer jump
 vim.keymap.set("n", "<A-[>", ":bprevious<CR>", opts)
 vim.keymap.set("n", "<A-]>", ":bnext<CR>", opts)
--- vim.keymap.set("n", "<Leader>bb", ":b#<CR>", opts)
--- vim.keymap.set("n", "<Leader>bn", ":bnext<CR>", opts)
--- vim.keymap.set("n", "<Leader>bp", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<Leader>bb", ":b#<CR>", opts)
+vim.keymap.set("n", "<Leader>bn", ":bnext<CR>", opts)
+vim.keymap.set("n", "<Leader>bp", ":bprevious<CR>", opts)
 
 -- resize with arrows
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -127,3 +127,6 @@ end, { desc = "Search command history" })
 -- 	vim.api.nvim_buf_set_vim.keymap.set(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], tt_opts)
 -- end
 -- vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+
+-- symbols-outline
+vim.keymap.set('n', '<leader>to', "<cmd>SymbolsOutline<cr>", { desc = "Toggle symbols outline window"} )
