@@ -7,6 +7,7 @@ treesitter.setup{
 		"lua",
 		"c_sharp",
 		"vim",
+    'xml',
 	},
 	context_commentstring = {
 		enable = true,
