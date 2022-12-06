@@ -74,6 +74,8 @@ return packer.startup(function(use)
   -- Colorschemes
   use "folke/tokyonight.nvim"
   use "kaicataldo/material.vim"
+  use "dracula/vim"
+  use "rakr/vim-one"
 
   -- fuzzy finder
   use {
