@@ -5,8 +5,8 @@ vim.opt.background = "dark"
 -- local colorscheme = "darkblue"
 -- local colorscheme = "tokyonight"
 -- local colorscheme = "tokyonight-day" -- light mode
-local colorscheme = "material"
--- local colorscheme = "dracula"
+-- local colorscheme = "material"
+local colorscheme = "dracula"
 -- local colorscheme = "one"
 
 if colorscheme == 'material' then
