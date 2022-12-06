@@ -1,4 +1,5 @@
 local servers = {
+  "html",
 	"sumneko_lua",
 	"omnisharp",
   "lemminx",
