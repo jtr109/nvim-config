@@ -10,7 +10,7 @@ toggleterm.setup({
 -- lazygit integration
 local Terminal  = require('toggleterm.terminal').Terminal
 local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
-local function _lazygit_toggle()
+local function lazygit_toggle()
   lazygit:toggle()
 end
-vim.keymap.set("n", "<leader>tg", _lazygit_toggle, { desc = "Toggle lazygit" })
+vim.keymap.set("n", "<leader>tg", lazygit_toggle, { desc = "Toggle lazygit" })
