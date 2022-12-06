@@ -133,4 +133,11 @@ end, { desc = "Search command history" })
 vim.keymap.set('n', '<leader>to', "<cmd>SymbolsOutline<cr>", { desc = "Toggle symbols outline window" })
 
 -- spell
-vim.keymap.set('n', '<leader>ts', function() vim.opt.spell = not vim.opt.spell:get() end, { desc = "Toggle spell" })
+vim.keymap.set('n', '<leader>ts', function()
+  vim.opt.spell = not vim.opt.spell:get()
+  if vim.opt.spell:get() then
+    print('Spell check is opened.')
+  else
+    print('Spell check is closed.')
+  end
+end, { desc = "Toggle spell" })
