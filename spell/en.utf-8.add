@@ -19,3 +19,7 @@ keymap
 esc
 lsp
 lua
+cmp
+popup
+xml
+html

@@ -1,5 +1,5 @@
 -- disable netrw at the very start of your init.lua (strongly advised)
--- dependences:
+-- dependencies:
 --   - nvim-tree.lua
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
@@ -8,7 +8,7 @@
 local options = {
   clipboard = 'unnamedplus', -- enable system clipboard
   cursorline = true, -- highlight cursor line
-  ignorecase = true, -- Ingore case on search. It works with smartcase for search.
+  ignorecase = true, -- Ignore case on search. It works with `smartcase` for search.
   -- mouse = 'a', -- enable mouse
   number = true, -- show line number
   relativenumber = true, -- relative line number
@@ -19,6 +19,7 @@ local options = {
   spell = true, -- enable builtin spell checker
   spelllang = "en_us", -- set spell checking language
   spelloptions = "camel", -- support check camel words
+  imdisable = true, -- disable IME. It disables conversion of double pinyin
 }
 for k, v in pairs(options) do
   vim.opt[k] = v
