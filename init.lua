@@ -17,4 +17,3 @@ require("custom.which-key")
 require("custom.symbols-outline")
 require("custom.nvim-ts-autotag")
 require("custom.settings")
-
