@@ -38,6 +38,7 @@ return packer.startup(function(use)
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } -- status line
   use "romainl/vim-cool" -- auto nohl after searching
   use 'simrat39/symbols-outline.nvim'
+  use 'dstein64/vim-startuptime' -- obtain startup time
 
   -- Comment
   use 'tpope/vim-commentary' -- comment
