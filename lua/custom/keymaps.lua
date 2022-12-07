@@ -107,7 +107,7 @@ local telescope_builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, { desc = "Find files" })
 vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, { desc = "Global search" })
 vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, { desc = "Find buffers" })
-vim.keymap.set('n', '<leader>ft', telescope_builtin.lsp_dynamic_workspace_symbols,
+vim.keymap.set('n', '<leader>fs', telescope_builtin.lsp_dynamic_workspace_symbols,
   { desc = "LSP dynamic workspace symbols" })
 -- Or use `lsp_workspace_symbols` to replace `lsp_dynamic_workspace_symbols`. I don't know the difference.
 vim.keymap.set('n', '<leader>fc', function()
