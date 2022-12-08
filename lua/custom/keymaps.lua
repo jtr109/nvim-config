@@ -64,24 +64,6 @@ vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- nvim-tree.lua
 vim.keymap.set("n", "<Leader>te", ":NvimTreeToggle<CR>", opts) -- toggle explorer
 
--- leap.vim
-vim.keymap.set({ "n", "x", "o" }, "<Leader>s", "<Plug>(leap-forward-to)", opts)
-vim.keymap.set({ "n", "x", "o" }, "<Leader>x", "<Plug>(leap-forward-till)", opts)
-vim.keymap.set({ "n", "x", "o" }, "<Leader>S", "<Plug>(leap-backward-to)", opts)
-vim.keymap.set({ "n", "x", "o" }, "<Leader>X", "<Plug>(leap-backward-till)", opts)
-vim.keymap.set({ "n", "x", "o" }, "<Leader>gs", "<Plug>(leap-cross-window)", opts)
-
--- lsp
--- map("n", "<leader>fu", ":Telescope lsp_references<CR>")
--- map("n", "<leader>gd", ":Telescope lsp_definitions<CR>")
--- map("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
--- map("n", "<leader>dn", ":lua vim.lsp.diagnostic.goto_next()<CR>")
--- map("n", "<leader>dN", ":lua vim.lsp.diagnostic.goto_prev()<CR>")
--- map("n", "<leader>dd", ":Telescope lsp_document_diagnostics<CR>")
--- map("n", "<leader>dD", ":Telescope lsp_workspace_diagnostics<CR>")
--- map("n", "<leader>xx", ":Telescope lsp_code_actions<CR>")
--- map("n", "<leader>xd", ":%Telescope lsp_range_code_actions<CR>")
-
 -- LSP
 -- copy from: https://github.com/LunarVim/Neovim-from-scratch/blob/master/lua/user/lsp/handlers.lua
 vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)

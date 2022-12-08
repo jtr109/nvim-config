@@ -28,7 +28,6 @@ local packer_bootstrap = ensure_packer()
 
 return packer.startup(function(use)
   use 'wbthomason/packer.nvim' -- Packer can manage itself
-  use 'ggandor/leap.nvim' -- alternative of easy motion
   use 'tpope/vim-repeat' -- repeat.vim
   use "lewis6991/gitsigns.nvim" -- Git status line in side
   use "windwp/nvim-autopairs" -- auto complete brackets
@@ -39,6 +38,7 @@ return packer.startup(function(use)
   use "romainl/vim-cool" -- auto nohl after searching
   use 'simrat39/symbols-outline.nvim'
   use 'dstein64/vim-startuptime' -- obtain startup time
+  use 'easymotion/vim-easymotion' -- quick motion/jump
 
   -- Comment
   use 'tpope/vim-commentary' -- comment
