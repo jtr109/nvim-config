@@ -12,7 +12,15 @@ telescope.setup {
       end
     },
     find_files = {
-      hidden = true, -- show hidden files
+      -- hidden = true, -- show hidden files
+      find_command = {
+        "rg",
+        "--files",
+        "--ignore",
+        "--hidden",
+        "-g",
+        "!/.git",
+      }
     }
   }
 }
