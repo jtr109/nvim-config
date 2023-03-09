@@ -1,7 +1,9 @@
--- https://github.com/folke/which-key.nvim
-
-local status_ok, which_key = pcall(require, "which-key")
+local status_ok, plugin = pcall(require, "git")
 if not status_ok then
 	return
 end
-which_key.setup()
+plugin.setup({
+  keymaps = {
+    browse = "<leader>go",
+  }
+})

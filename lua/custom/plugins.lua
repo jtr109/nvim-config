@@ -39,6 +39,7 @@ return packer.startup(function(use)
   use 'simrat39/symbols-outline.nvim'
   use 'dstein64/vim-startuptime' -- obtain startup time
   use 'easymotion/vim-easymotion' -- quick motion/jump
+  use 'C:/Users/liryan/source/diy/git.nvim' -- custom git plugin to open in remote
 
   -- Comment
   use 'tpope/vim-commentary' -- comment
